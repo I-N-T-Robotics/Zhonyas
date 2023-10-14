@@ -17,6 +17,7 @@ buildscript {
 
 plugins {
     id 'maven-publish'
+    id 'java-library'
 }
 
 // This is now required because aapt2 has to be downloaded from the
