@@ -32,6 +32,18 @@ allprojects {
     apply plugin: "maven-publish"
 }
 
+subprojects {
+    jar {
+        destinationDirectory = file("$rootDir/build/libs")
+    }
+
+    java {
+        withSourcesJar()
+    }
+
+}
+
+
 repositories {
     mavenCentral()
 }
