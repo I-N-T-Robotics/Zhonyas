@@ -40,12 +40,21 @@ subprojects {
     java {
         withSourcesJar()
     }
-
 }
-
 
 repositories {
     mavenCentral()
+}
+
+publishing {
+    publications {
+        maven(MavenPublication) {
+            groupId =
+                    'com.github.I-N-T-Robotics'
+                                artifactId = 'Zhonyas'
+                                from components.java
+        }
+    }
 }
 
 
