@@ -33,3 +33,25 @@ dependencies {
     implementation project(':FtcRobotController')
     annotationProcessor files('lib/OpModeAnnotationProcessor.jar')
 }
+
+publishing {
+    publications {
+        maven(MavenPublication) {
+            groupId = 'com.github.I-N-T-Robotics.Zhonyas'
+            artifactId = project.name
+
+            afterEvaluate {
+                from components.release
+            }
+
+        }
+    }
+}
+jar {
+    destinationDirectory = file("$rootDir/build/libs")
+}
+
+java {
+    withSourcesJar()
+}
+

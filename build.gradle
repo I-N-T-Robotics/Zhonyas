@@ -17,7 +17,6 @@ buildscript {
 
 plugins {
     id 'maven-publish'
-    id 'java-library'
 }
 
 // This is now required because aapt2 has to be downloaded from the
@@ -30,32 +29,15 @@ allprojects {
     }
 
     apply plugin: "maven-publish"
+
 }
 
-subprojects {
-    jar {
-        destinationDirectory = file("$rootDir/build/libs")
-    }
 
-    java {
-        withSourcesJar()
-    }
-}
 
 repositories {
     mavenCentral()
 }
 
-publishing {
-    publications {
-        maven(MavenPublication) {
-            groupId =
-                    'com.github.I-N-T-Robotics'
-                                artifactId = 'Zhonyas'
-                                from components.java
-        }
-    }
-}
 
 
 
