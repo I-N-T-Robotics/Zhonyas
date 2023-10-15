@@ -28,6 +28,8 @@ allprojects {
         maven { url "https://jitpack.io" }
         google()
     }
+
+    apply plugin: "maven-publish"
 }
 
 repositories {
